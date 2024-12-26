@@ -1,0 +1,12 @@
+[
+  { "username": "Alice", "email": "alice@example.com", "password": "hashed_password1" },
+  { "username": "Bob", "email": "bob@example.com", "password": "hashed_password2" },
+  { "username": "Charlie", "email": "charlie@example.com", "password": "hashed_password3" },
+  { "username": "Dave", "email": "dave@example.com", "password": "hashed_password4" },
+  { "username": "Eve", "email": "eve@example.com", "password": "hashed_password5" },
+  { "username": "Frank", "email": "frank@example.com", "password": "hashed_password6" },
+  { "username": "Grace", "email": "grace@example.com", "password": "hashed_password7" },
+  { "username": "Heidi", "email": "heidi@example.com", "password": "hashed_password8" },
+  { "username": "Ivan", "email": "ivan@example.com", "password": "hashed_password9" },
+  { "username": "Judy", "email": "judy@example.com", "password": "hashed_password10" }
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+</head>
+<body>
+  <h1>Movie List</h1>
+  <div id="movies-container">
+    <!-- Movies will be displayed here -->
+  </div>
+
+  <script>
+    // Fetch movies from the server
+    fetch('http://localhost:5000/movies')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch movies: ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then((movies) => {
+        const container = document.getElementById('movies-container');
+
+        // If no movies are found
+        if (movies.length === 0) {
+          container.innerHTML = '<p>No movies found</p>';
+          return;
+        }
+
+        // Render movie data
+        const movieList = movies.map((movie) => `
+          <div>
+            <h2>${movie.title}</h2>
+            <p>Director: ${movie.director}</p>
+            <p>Genre: ${movie.genre}</p>
+          </div>
+        `).join('');
+        container.innerHTML = movieList;
+      })
+      .catch((error) => {
+        console.error('Error fetching movies:', error);
+        document.getElementById('movies-container').innerHTML = '<p>Error loading movies. Please try again later.</p>';
+      });
+  </script>
+</body>
+</html>
